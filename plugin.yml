@@ -1,0 +1,9 @@
+name: Traxions
+main: teckwiz.traxions.faxions.Faxions
+author: Teckwiz
+version: 1.4
+commands:
+  Traxions:
+    description: Traxions
+    usage: /Trax
+    permission: traxions.faxions.null
