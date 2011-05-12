@@ -21,7 +21,6 @@ public class Faxions extends JavaPlugin {
 	private static final Logger log = Logger.getLogger("Minecraft");
 	private final FaxBlockListener blockListener = new FaxBlockListener(this);
 	private final FaxPlayerListener playerListener = new FaxPlayerListener(this);
-   public final HashMap<Player, ArrayList<Block>> tdUsers = new HashMap<Player, ArrayList<Block>>();
    public final HashMap<Player, ArrayList<Block>> FactionEMPIRE = new HashMap<Player, ArrayList<Block>>();
    public final HashMap<Player, ArrayList<Block>> FactionBARBARIAN = new HashMap<Player, ArrayList<Block>>();
    public final HashMap<Player, ArrayList<Block>> FactionNULL = new HashMap<Player, ArrayList<Block>>();
@@ -50,10 +49,10 @@ public class Faxions extends JavaPlugin {
 		//permissions
 		Plugin permissions = this.getServer().getPluginManager().getPlugin("Permissions");
 		if (permissions == null) {
-			log.info("[Traxions] Permissions not found! Defaulting to OP only!");
+			log.info("[Traxions] Permissions not found! Running in standard Op mode, will fail :)!");
 			usePermissions = false; 
 		} else {
-			log.info("[Traxions] Permissions detected!");
+			log.info("[Traxions] Permissions Loaded!!");
 			usePermissions = true;
 			perms = ((Permissions)permissions).getHandler();
 		}
@@ -61,8 +60,9 @@ public class Faxions extends JavaPlugin {
 	}
 
 	public void onDisable() {
-		log.info("Traxions DISABLED");
+		log.info("Traxions unloaded!");
 	}
+//TODO: Remove from here down! -ish
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args){
 		if(commandLabel.equalsIgnoreCase("Trax")){
 			toggleTD((Player) sender);
@@ -79,6 +79,7 @@ public class Faxions extends JavaPlugin {
 			player.sendMessage("Turrit Enabled");
 		}
 	}
+// TODO Stop here! :D
 	public boolean ifFactionGod(Player player){
 		return this.FactionGOD.containsKey(player);
 	}
