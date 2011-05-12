@@ -16,7 +16,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import com.nijiko.permissions.PermissionHandler;
 import com.nijikokun.bukkit.Permissions.Permissions;
 import org.bukkit.plugin.Plugin;
-//This class is fucking messy! Enjor reading it :F
+//This class is messy! Enjor reading it :F
 public class Faxions extends JavaPlugin {
 	private static final Logger log = Logger.getLogger("Minecraft");
 	private final FaxBlockListener blockListener = new FaxBlockListener(this);
